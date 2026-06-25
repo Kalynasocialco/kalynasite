@@ -78,4 +78,4 @@ repository root as-is — there is nothing to compile.
 
 - Email: hello@kalynasocial.com
 - Phone: (778) 838-1908
-- Edmonton & surrounding area
+- Edmonton & surrounding area.
