@@ -46,33 +46,8 @@ Built as a static, dependency-free site: plain HTML, CSS, and vanilla JavaScript
 - `intro.js` plays the one-time berry-drop intro animation on the home page. It runs once
   per browser session (tracked with `sessionStorage`) and respects
   `prefers-reduced-motion`.
-- `contact.js` handles the contact form. It POSTs the submission to the
-  `/api/contact` serverless function, which sends the email via [Resend](https://resend.com),
-  then shows the visitor a success or error message.
-
-## Contact form / email (Resend)
-
-The contact form is wired to Resend through a Vercel serverless function:
-
-```
-Browser form  →  fetch('/api/contact')  →  api/contact.js (holds API key)  →  Resend  →  inbox
-```
-
-- `api/contact.js` — serverless function. Validates the submission and calls the Resend
-  API. The secret key is read from the `RESEND_API_KEY` environment variable and is never
-  exposed to the browser.
-- Emails are sent **from** `hello@kalynasocial.com` (must be a verified Resend domain) and
-  delivered **to** `hello@kalynasocial.com`, with `reply_to` set to the visitor's address.
-  Change the `to:` line in `api/contact.js` to route leads elsewhere.
-
-### Required setup (one-time, outside the repo)
-
-1. Create a [Resend](https://resend.com) account.
-2. Add and **verify the `kalynasocial.com` domain** in Resend (add the DNS records it
-   provides). Required to send from `hello@kalynasocial.com`.
-3. Create a Resend API key.
-4. In Vercel → **Settings → Environment Variables**, add `RESEND_API_KEY` with that key
-   (apply to Production), then redeploy.
+- `contact.js` handles the contact form. **Note:** the form is not yet wired to a
+  backend — on submit it shows a message asking visitors to email directly.
 
 ## Running locally
 
@@ -93,6 +68,11 @@ Then visit `http://localhost:8000`.
 
 Any static host works (GitHub Pages, Netlify, Vercel, Cloudflare Pages, etc.). Deploy the
 repository root as-is — there is nothing to compile.
+
+## TODO / known gaps
+
+- **Contact form has no backend.** Hook the form in `contact.html` up to a form service
+  (Formspree, Netlify Forms, etc.) or an email endpoint, then update `js/contact.js`.
 
 ## Contact
 

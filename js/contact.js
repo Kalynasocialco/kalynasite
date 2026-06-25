@@ -1,7 +1,7 @@
 // ============================================
-// CONTACT FORM — submits to /api/contact (Resend)
-// Posts the form data to the serverless function, which
-// sends the email. Shows the visitor real success/error states.
+// CONTACT FORM — decorative submit handler
+// No backend is wired up yet. This gives the user
+// feedback and prevents an actual page submission/reload.
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,33 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const note = document.getElementById('formNote');
   if (!form) return;
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
-
-    const submitBtn = form.querySelector('.form-submit');
-    const data = Object.fromEntries(new FormData(form).entries());
-
-    submitBtn.disabled = true;
-    note.textContent = 'Sending…';
-    note.style.color = 'var(--ink-soft)';
-
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-
-      if (!res.ok) throw new Error('Request failed');
-
-      form.reset();
-      note.textContent = "Thanks! We've got your message and will be in touch shortly.";
-      note.style.color = 'var(--berry)';
-    } catch (err) {
-      note.textContent = "Something went wrong. Please email hello@kalynasocial.com directly.";
-      note.style.color = 'var(--berry)';
-    } finally {
-      submitBtn.disabled = false;
-    }
+    note.textContent = "This form isn't connected yet. Please email hello@kalynasocial.com directly for now.";
+    note.style.color = 'var(--berry)';
   });
 });
