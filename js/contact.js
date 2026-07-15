@@ -9,6 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const note = document.getElementById('formNote');
   if (!form) return;
 
+  // Pre-select the "What are you interested in?" dropdown from a URL
+  // parameter, e.g. contact.html?interest=momentum — used by the package
+  // and service buttons on the Services page.
+  const select = document.getElementById('interest');
+  const interest = new URLSearchParams(window.location.search).get('interest');
+  if (select && interest) {
+    const match = Array.from(select.options).some((o) => o.value === interest);
+    if (match) select.value = interest;
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 

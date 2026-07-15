@@ -206,3 +206,32 @@
 @media (max-width: 860px) {
   .builds-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- Ad campaigns ---------- */
+
+.ad-case {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: center;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.ad-case-media {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.ad-case-media img {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 24px 50px -24px rgba(43,42,40,0.3);
+}
+
+.ad-case-body h3 { margin-top: 0.4rem; }
+.ad-case-body p { color: var(--ink-soft); }
+
+@media (max-width: 860px) {
+  .ad-case { grid-template-columns: 1fr; }
+}

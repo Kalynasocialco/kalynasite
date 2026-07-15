@@ -225,7 +225,7 @@ p.lede {
   align-items: center;
 }
 .site-header .logo-link img {
-  height: 46px;
+  height: 60px;
   width: auto;
 }
 
@@ -384,7 +384,7 @@ p.lede {
 }
 .footer-social a:hover { opacity: 1; color: var(--rose-pale); transform: translateY(-2px); }
 
-.footer-logo img { height: 52px; margin-bottom: 1.1rem; }
+.footer-logo img { height: 68px; margin-bottom: 1.1rem; }
 .footer-tagline { font-family: var(--font-display); font-style: italic; opacity: 0.7; font-size: 1.05rem; max-width: 30ch; }
 
 .footer-bottom {
@@ -412,6 +412,24 @@ p.lede {
 }
 .footer-dot {
   opacity: 0.6;
+}
+
+.footer-credit {
+  max-width: var(--container);
+  margin: 1.4rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--cream);
+  opacity: 0.5;
+}
+.footer-credit img {
+  height: 22px;
+  width: auto;
+  display: inline-block;
 }
 
 @media (max-width: 760px) {
