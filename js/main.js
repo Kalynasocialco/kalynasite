@@ -56,9 +56,9 @@ function initStatRotator() {
   if (!card) return;
 
   const stats = [
-    { client: 'R.A. Mechanical', platform: 'Facebook', value: '+797%', label: 'engagement growth, first month', avatar: 'images/avatars/ra-mechanical.jpg' },
-    { client: 'Sherwood Flooring', platform: 'Instagram', value: '+1,181.3%', label: 'reach growth, first month', avatar: 'images/avatars/sherwood-flooring.jpg' },
-    { client: 'Terri Rosin', platform: 'Instagram', value: '+240.7%', label: 'reach growth, first month', avatar: 'images/avatars/terri.jpg' },
+    { client: 'R.A. Mechanical', platform: 'Facebook', value: '+869%', label: 'engagement growth since May', avatar: 'images/avatars/ra-mechanical.jpg' },
+    { client: 'Sherwood Flooring', platform: 'Facebook', value: '+1,950%', label: 'engagement growth since May', avatar: 'images/avatars/sherwood-flooring.jpg' },
+    { client: 'Terri Rosin', platform: 'Instagram', value: '+309%', label: 'reach growth since April', avatar: 'images/avatars/terri.jpg' },
     { client: 'MaintenAces', platform: 'Facebook', value: '+344%', label: 'views growth, June vs. May', avatar: 'images/avatars/maintenaces.jpg' },
   ];
 
