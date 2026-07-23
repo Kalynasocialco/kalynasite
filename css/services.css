@@ -66,6 +66,7 @@
 .price-card.featured .price-features span,
 .price-card.featured .price-focus { color: rgba(244,239,230,0.72); }
 .price-card.featured .amt { color: var(--rose-pale); }
+.price-card.featured .per { color: var(--cream); opacity: 0.9; }
 .price-card.featured .price-features li { border-color: rgba(244,239,230,0.12); }
 
 .popular-badge {
@@ -275,6 +276,22 @@
   font-weight: 600;
   font-size: 1.05rem;
 }
+.addon-cta {
+  margin-top: 1rem;
+  align-self: flex-start;
+  font-size: 0.85rem;
+  padding: 0.7rem 1.4rem;
+}
+
+.addons-subhead {
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--berry);
+  margin: 2.8rem 0 1.5rem;
+}
+.addons-subhead:first-of-type { margin-top: 0.5rem; }
 
 @media (max-width: 900px) {
   .addons-grid { grid-template-columns: 1fr 1fr; }
