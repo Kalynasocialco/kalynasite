@@ -2,7 +2,7 @@
    KALYNA SOCIAL CO. — Design Tokens & Base
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 :root {
   /* Color */
@@ -20,9 +20,7 @@
 
   /* Type */
   --font-display: 'Playfair Display', serif;
-  /* Avenir is a licensed font (no free web version); real Avenir shows on
-     devices that have it, Nunito Sans is the closest free web fallback. */
-  --font-body: 'Avenir Next', 'Avenir', 'Nunito Sans', sans-serif;
+  --font-body: 'Lora', serif;
 
   /* Layout */
   --container: 1180px;
@@ -54,7 +52,7 @@ body {
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
