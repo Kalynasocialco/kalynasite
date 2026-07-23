@@ -431,22 +431,33 @@
 
 .tt-member {
   background: var(--cream-deep);
+}
+.tt-card {
+  background: var(--paper);
+  border-radius: 24px;
+  padding: clamp(2rem, 4vw, 3rem);
+  max-width: 600px;
+  margin: 0 auto;
   text-align: center;
+  box-shadow: 0 24px 50px -30px rgba(43,42,40,0.28);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .tt-badge {
   display: inline-block;
-  margin: 0.8rem 0 1.2rem;
+  margin: 0.7rem 0 1rem;
   transition: transform 0.25s var(--ease-out);
 }
 .tt-badge img {
-  height: clamp(78px, 12vw, 104px);
+  height: clamp(58px, 9vw, 80px);
   width: auto;
   display: block;
 }
 .tt-badge:hover { transform: translateY(-3px); }
 .tt-copy {
   color: var(--ink-soft);
-  max-width: 46ch;
+  max-width: 42ch;
   margin: 0 auto;
   font-size: 0.98rem;
 }
