@@ -7,6 +7,8 @@
   padding-bottom: 1rem;
 }
 .portfolio-hero h1 { max-width: 16ch; margin-top: 1rem; }
+.hero-jump-links { margin-top: 1.6rem; display: flex; gap: 0.8rem; flex-wrap: wrap; }
+#case-studies, #website-builds, #ad-campaigns { scroll-margin-top: 90px; }
 
 /* ---------- Case studies ---------- */
 
