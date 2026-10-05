@@ -1,6 +1,6 @@
-# Kalyna Social Co. — Website
+# Kalyna Social Corp. — Website
 
-Marketing website for **Kalyna Social Co.**, a social media management agency serving Edmonton-area trades and service-based businesses.
+Marketing website for **Kalyna Social Corp.**, a social media management agency serving Edmonton-area trades and service-based businesses.
 
 Built as a static, dependency-free site: plain HTML, CSS, and vanilla JavaScript. No build step, no framework, no package manager.
 

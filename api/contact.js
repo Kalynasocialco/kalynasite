@@ -32,7 +32,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         // `from` MUST be an address on your verified Resend domain
-        from: 'Kalyna Social Co. <hello@kalynasocial.com>',
+        from: 'Kalyna Social Corp. <hello@kalynasocial.com>',
         // Where you receive the lead
         to: ['hello@kalynasocial.com'],
         // Reply goes back to the visitor

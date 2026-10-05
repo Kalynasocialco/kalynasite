@@ -1,5 +1,5 @@
 // ============================================
-// KALYNA SOCIAL CO. — Shared site behavior
+// KALYNA SOCIAL CORP. — Shared site behavior
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
