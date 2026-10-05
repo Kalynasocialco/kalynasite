@@ -38,7 +38,7 @@
   const vw = window.innerWidth;
   const vh = window.innerHeight;
   const isSmall = vw < 600;
-  const COUNT = isSmall ? 16 : 26;
+  const COUNT = isSmall ? 48 : 110;
 
   const berries = [];
 
@@ -46,14 +46,16 @@
     const berry = document.createElement('div');
     berry.className = 'fall-berry';
 
-    const size = Math.round(16 + Math.random() * (isSmall ? 26 : 40)); // 16–42px / 16–56px
-    // Bias horizontal start away from the dead-center column so the wordmark zone stays clearer
+    const size = Math.round(18 + Math.random() * (isSmall ? 30 : 46)); // 18–48px / 18–64px
+    // Keep the center column clear so the wordmark pops against open space:
+    // shove anything starting in the middle band out to the sides.
     let startX = Math.random() * 96;
-    if (startX > 32 && startX < 64) {
-      startX = startX < 48 ? startX - 22 : startX + 22;
+    if (startX > 26 && startX < 74) {
+      startX = startX < 50 ? startX - 26 : startX + 26;
+      startX = Math.max(2, Math.min(94, startX));
     }
     const floorY = -10 + Math.random() * (vh - 120); // lands anywhere top-to-bottom of the screen
-    const drift = (Math.random() - 0.5) * 140; // px horizontal scatter while falling
+    const drift = (Math.random() - 0.5) * 90; // px horizontal scatter while falling
     const dur = 1.15 + Math.random() * 0.55;
     const delay = Math.random() * 0.55;
     const bounce1 = 36 + Math.random() * 34;
