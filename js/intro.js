@@ -1,9 +1,12 @@
 // ============================================
 // INTRO ANIMATION CONTROLLER
-// A scatter of berries fall from the top of the screen,
+// A scatter of berries rain down across the whole screen,
 // bounce a couple times with cartoon-ish physics, and
 // settle — then the Kalyna wordmark fades in on top.
-// Runs once per browser session (sessionStorage).
+// Berries falling over the center bounce off an invisible
+// "ceiling" just above the wordmark, piling softly instead
+// of covering the logo. Runs once per browser session
+// (sessionStorage).
 // ============================================
 
 (function () {
@@ -47,14 +50,23 @@
     berry.className = 'fall-berry';
 
     const size = Math.round(18 + Math.random() * (isSmall ? 30 : 46)); // 18–48px / 18–64px
-    // Keep the center column clear so the wordmark pops against open space:
-    // shove anything starting in the middle band out to the sides.
-    let startX = Math.random() * 96;
-    if (startX > 26 && startX < 74) {
-      startX = startX < 50 ? startX - 26 : startX + 26;
-      startX = Math.max(2, Math.min(94, startX));
+    // Berries rain across the full width. In the center band (where the
+    // wordmark will pop in) they bounce off an invisible "ceiling" just
+    // above the logo instead of falling through it.
+    const halfBand = isSmall ? 28 : 22; // vw each side of center
+    const startX = 2 + Math.random() * 92;
+    const inCenter = startX > 50 - halfBand && startX < 50 + halfBand;
+    const ceiling = vh / 2 - (isSmall ? 120 : 150); // just above the wordmark
+    // NOTE: berries start at top:-120px, so final berry top = floorY - 120.
+    let floorY;
+    if (inCenter) {
+      // Soft mound above the logo: dense at the ceiling, feathering upward
+      const restTop = ceiling - Math.pow(Math.random(), 1.5) * 200;
+      floorY = 120 + restTop;
+    } else {
+      // Anywhere from the very top to the very bottom of the screen
+      floorY = 120 + Math.random() * Math.max(0, vh - size);
     }
-    const floorY = -10 + Math.random() * (vh - 120); // lands anywhere top-to-bottom of the screen
     const drift = (Math.random() - 0.5) * 90; // px horizontal scatter while falling
     const dur = 1.15 + Math.random() * 0.55;
     const delay = Math.random() * 0.55;
