@@ -269,21 +269,37 @@
   position: absolute;
   inset: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  padding: 1rem;
-  text-align: center;
   background: linear-gradient(160deg, rgba(122,31,48,0.9), rgba(43,42,40,0.85));
   opacity: 0;
   transition: opacity 0.35s var(--ease-out);
 }
+.client-tile-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 2.2rem 1rem 0.9rem;
+  text-align: left;
+  background: linear-gradient(180deg, rgba(20,18,16,0) 0%, rgba(20,18,16,0.78) 70%);
+  transition: opacity 0.3s var(--ease-out);
+}
 .client-tile-name {
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.12rem;
   line-height: 1.2;
   color: var(--cream);
+}
+.client-tile-cat {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.75;
 }
 .client-tile-cta {
   font-size: 0.78rem;
@@ -296,6 +312,8 @@
 }
 .client-tile:hover img,
 .client-tile:focus-visible img { opacity: 0.28; transform: scale(1.04); }
+.client-tile:hover .client-tile-label,
+.client-tile:focus-visible .client-tile-label { opacity: 0; }
 .client-tile:hover .client-tile-veil,
 .client-tile:focus-visible .client-tile-veil { opacity: 1; }
 .client-tile:focus-visible { outline: 2px solid var(--berry); outline-offset: 3px; }
